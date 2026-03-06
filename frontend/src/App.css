@@ -1,0 +1,12 @@
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f1f5f9; color: #1f2937; }
+.app { min-height: 100vh; display: flex; flex-direction: column; }
+.app-header { background: #fff; border-bottom: 1px solid #e5e7eb; padding: 0 24px; height: 56px; display: flex; align-items: center; }
+.header-inner { max-width: 1280px; width: 100%; margin: 0 auto; }
+.logo { font-size: 1.1rem; font-weight: 700; color: #6366f1; }
+.app-main { display: grid; grid-template-columns: 360px 1fr; gap: 24px; max-width: 1280px; width: 100%; margin: 24px auto; padding: 0 24px; align-items: start; }
+.sidebar { display: flex; flex-direction: column; gap: 20px; position: sticky; top: 24px; }
+@media (max-width: 900px) {
+  .app-main { grid-template-columns: 1fr; }
+  .sidebar { position: static; }
+}

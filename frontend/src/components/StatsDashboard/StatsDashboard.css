@@ -1,0 +1,15 @@
+.stats-dashboard { background: #fff; border-radius: 12px; padding: 24px; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+.stats-dashboard h2 { margin: 0 0 18px; font-size: 1.2rem; color: #111; }
+.stats-loading { padding: 20px; color: #9ca3af; text-align: center; }
+.stat-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 22px; }
+.stat-card { background: #f9fafb; border-radius: 10px; padding: 14px 16px; text-align: center; }
+.stat-value { font-size: 1.6rem; font-weight: 700; color: #6366f1; }
+.stat-label { font-size: .78rem; color: #6b7280; margin-top: 2px; }
+.breakdown-section { margin-top: 16px; }
+.breakdown-section h3 { font-size: .88rem; color: #374151; margin: 0 0 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+.bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.bar-label { width: 72px; font-size: .82rem; color: #374151; text-transform: capitalize; }
+.bar-track { flex: 1; height: 8px; background: #f3f4f6; border-radius: 999px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 999px; transition: width .4s ease; }
+.bar-value { width: 80px; font-size: .8rem; color: #374151; font-weight: 600; text-align: right; }
+.bar-pct { font-weight: 400; color: #9ca3af; }

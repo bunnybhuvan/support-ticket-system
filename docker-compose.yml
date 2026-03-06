@@ -1,0 +1,43 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: tickets_db
+      POSTGRES_USER: tickets_user
+      POSTGRES_PASSWORD: tickets_pass
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U tickets_user -d tickets_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build: ./backend
+    environment:
+      POSTGRES_DB: tickets_db
+      POSTGRES_USER: tickets_user
+      POSTGRES_PASSWORD: tickets_pass
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: "5432"
+      DJANGO_SECRET_KEY: "change-this-in-production-use-a-long-random-string"
+      DEBUG: "False"
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:

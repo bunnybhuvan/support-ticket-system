@@ -1,0 +1,134 @@
+.ticket-form-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 28px 32px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  border: 1px solid #e5e7eb;
+}
+
+.ticket-form-card h2 {
+  margin: 0 0 20px;
+  font-size: 1.25rem;
+  color: #111827;
+}
+
+.success-banner {
+  background: #d1fae5;
+  color: #065f46;
+  border: 1px solid #6ee7b7;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+}
+
+.error-banner {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+}
+
+.field { margin-bottom: 16px; }
+
+.field label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.req { color: #ef4444; }
+
+.field input, .field textarea, .field select {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #111827;
+  background: #f9fafb;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  box-sizing: border-box;
+}
+
+.field input:focus, .field textarea:focus, .field select:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
+  background: #fff;
+}
+
+.field input.error, .field textarea.error, .field select.error {
+  border-color: #ef4444;
+}
+
+.field select.llm-filled {
+  border-color: #8b5cf6;
+  background: #f5f3ff;
+}
+
+.field-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.field-error { font-size: 0.8rem; color: #ef4444; }
+.char-count { font-size: 0.75rem; color: #9ca3af; margin-left: auto; }
+
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+.llm-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: #6366f1;
+  margin-top: 6px;
+}
+
+.spinner {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #6366f1;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.llm-badge {
+  font-size: 0.78rem;
+  color: #7c3aed;
+  background: #f5f3ff;
+  border: 1px solid #ddd6fe;
+  border-radius: 6px;
+  padding: 5px 10px;
+  margin-top: 6px;
+  display: inline-block;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 11px;
+  background: #6366f1;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.15s;
+}
+
+.submit-btn:hover:not(:disabled) { background: #4f46e5; }
+.submit-btn:disabled { background: #a5b4fc; cursor: not-allowed; }
