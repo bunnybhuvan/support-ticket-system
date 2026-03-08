@@ -1,4 +1,6 @@
-const BASE = '/api';
+const BASE = import.meta.env.VITE_API_BASE
+  ? `${import.meta.env.VITE_API_BASE}/api`
+  : '/api';
 
 export async function listTickets(filters = {}) {
   const params = new URLSearchParams();
